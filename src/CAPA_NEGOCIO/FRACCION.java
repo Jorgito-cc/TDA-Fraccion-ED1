@@ -14,7 +14,7 @@ public class FRACCION {
     
     // y tiene que ser el nombre de la clase 
     public FRACCION(){ //sin parametros de entrada 
-        this.Nume = 0 ;
+        this.Nume = 0 ;//0
         this.Deno = 1;
         //8830
     }
