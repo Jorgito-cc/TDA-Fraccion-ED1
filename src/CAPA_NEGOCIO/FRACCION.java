@@ -123,6 +123,16 @@ public class FRACCION {
         //simplificar();
     }
        
+    // 4º DIVISION 
+       public void division(FRACCION A , FRACCION B ){
+           /*this.Nume = (A.getNume()*B.getDeno());
+           this.Deno = (A.getDeno() * B.getNume() );*/
+              this.Nume = (A.Nume*B.Deno);
+           this.Deno = (A.Deno * B.Nume );
+           //simplificar
+       }
+       //5 ºSIMPLIFICAR 
+       
     //LLAMADAS
     public static void main(String[] args) {
         //INSTANCIUAR LA CLASE 
