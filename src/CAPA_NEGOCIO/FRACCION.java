@@ -16,7 +16,7 @@ public class FRACCION {
     public FRACCION(){ //sin parametros de entrada 
         this.Nume = 0 ;
         this.Deno = 1;
-        //88
+        //8830
     }
     //CONSTRUCTOR CON PARAMETROS DE ENTRADA 
     public FRACCION(float numeradorr,float denominadorr , char signoo){
