@@ -97,30 +97,30 @@ public class FRACCION {
     //
     
     //OPERACIONES 
-    //1º SUMA 
-    public void suma(FRACCION A , FRACCION B ){
+    //1º SUMA --forma del auxi
+    public void suma2(FRACCION A , FRACCION B ){
         this.Deno = A.getDeno() * B.getDeno();
         this.Nume= (Deno /A.getDeno()*A.Nume)+(Deno/B.getDeno()*B.Nume)  ; 
-        //simplificar();
+        Simplificar();
     }
     
-    //version 2 de suma 
-     public void suma2(FRACCION A , FRACCION B ){
+    //version 2 de suma -mi forma
+     public void suma(FRACCION A , FRACCION B ){
         this.Deno = A.getDeno() * B.getDeno();
         this.Nume= (A.Nume*B.getDeno())+(A.getDeno()* B.Nume) ; 
-        //simplificar();
+        Simplificar();
     }
     //2º RESTA 
       public void resta(FRACCION A , FRACCION B ){
         this.Deno = A.getDeno() * B.getDeno();
         this.Nume= (Deno /A.getDeno()*A.Nume)-(Deno/B.getDeno()*B.Nume)  ; 
-        //simplificar();
+        Simplificar();
     }
     //3º MULTIPLICACION
        public void multiplicacion(FRACCION A , FRACCION B ){
         this.Deno = A.getDeno() * B.getDeno();
         this.Nume= A.getNume() * B.getNume() ; 
-        //simplificar();
+        Simplificar();
     }
        
     // 4º DIVISION 
@@ -129,18 +129,41 @@ public class FRACCION {
            this.Deno = (A.getDeno() * B.getNume() );*/
               this.Nume = (A.Nume*B.Deno);
            this.Deno = (A.Deno * B.Nume );
-           //simplificar
+           Simplificar();
        }
-       //5 ºSIMPLIFICAR 
+       //5 ºSIMPLIFICAR ---aprender
+       //(aprender a debugear 1 : 10 : 00)
+       public void Simplificar(){
+           float x = MCD() ;
+          this.Nume = Nume/x ;
+           this.Deno = Deno/x;
+       }
+       public float MCD(){
+            float u = Math.abs(Nume);
+            float v =Math.abs(Deno);
+           if (v ==0) {
+               return u ; 
+           }else{
+               float r= 0 ; 
+               while (v!= 0 ){
+                   r = u % v ;
+                   u=v ;
+                   v=r;
+               }
+               return u ;
+           }
+       }
+                  
        
     //LLAMADAS
     public static void main(String[] args) {
         //INSTANCIUAR LA CLASE 
-        FRACCION A = new FRACCION();  //trabajasin  parametrs de entrada
-        System.out.println(A.toString());
+        FRACCION A = new FRACCION(2 ,5,'+');  //trabajasin  parametrs de entrada
+        
+        System.out.println(A.ToString());
         //------------------------------------------------------------
         //con valores que el usuario lo pase 
-        FRACCION B = new FRACCION(-45,10 , '+'); //con parametros de entrada 
+        FRACCION B = new FRACCION(45,10 , '+'); //con parametros de entrada 
         /*
         FRACCION B = new FRACCION()
         B.setDeno(5) ;
@@ -148,7 +171,13 @@ public class FRACCION {
         B:setsigno('+')
         */
         //System.out.println(B.toString());
+        FRACCION C = new FRACCION();
+        C.suma(A, B);
         System.out.println(B.ToString());
+        
+        System.out.println(C.ToString());
+        
+        //
     }
     
 }
