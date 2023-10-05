@@ -5,15 +5,18 @@
  */
 package CAPA_PRESENTACION;
 
-/**
+import CAPA_NEGOCIO.FRACCION;
 
+/**
  * @author Jorge
  */
 public class F_FRACCION extends javax.swing.JFrame {
 
-    /**
-     * Creates new form F_FRACCION
-     */
+     FRACCION A = new FRACCION();
+     FRACCION B = new FRACCION();
+     FRACCION C = new FRACCION();
+      FRACCION D = new FRACCION();
+     
     public F_FRACCION() {
         initComponents();
     }
@@ -29,13 +32,13 @@ public class F_FRACCION extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jButtonsuma = new javax.swing.JButton();
+        jTxtnumA = new javax.swing.JTextField();
+        jTxtdenoA = new javax.swing.JTextField();
+        jTextnumB = new javax.swing.JTextField();
+        jTextdenoB = new javax.swing.JTextField();
+        signoA = new javax.swing.JComboBox<>();
+        signoB = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -43,23 +46,24 @@ public class F_FRACCION extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButtonresta = new javax.swing.JButton();
+        jButtonmultiplicar = new javax.swing.JButton();
+        jButtondividir = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        signoF = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        jTextFieldnum = new javax.swing.JTextField();
+        jTextFielddeno = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTextAreaañadir = new javax.swing.JTextArea();
         jButton5 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,28 +71,25 @@ public class F_FRACCION extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Stencil", 2, 18)); // NOI18N
         jLabel1.setText("OPERACIONES CON TDA FRACCION");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 310, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 310, 50));
 
-        jButton1.setText("SUMA");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
+        jButtonsuma.setText("SUMA");
+        jButtonsuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonsumaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonsuma, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
+        jPanel1.add(jTxtnumA, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 60, -1));
+        jPanel1.add(jTxtdenoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 60, -1));
+        jPanel1.add(jTextnumB, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, 60, -1));
+        jPanel1.add(jTextdenoB, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, 60, -1));
 
-        jTextField1.setText("jTextField1");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, -1));
+        signoA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
+        jPanel1.add(signoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
 
-        jTextField2.setText("jTextField2");
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, -1, -1));
-
-        jTextField3.setText("jTextField3");
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, -1));
-
-        jTextField4.setText("jTextField4");
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, -1, -1));
+        signoB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
+        jPanel1.add(signoB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, -1, -1));
 
         jLabel2.setText("NUMERADOR");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, -1, -1));
@@ -111,21 +112,21 @@ public class F_FRACCION extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 480, 110));
 
-        jButton2.setText("RESTA");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
+        jButtonresta.setText("RESTA");
+        jPanel1.add(jButtonresta, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
-        jButton3.setText("MULTIPLICACION");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 220, -1, -1));
+        jButtonmultiplicar.setText("MULTIPLICACION");
+        jPanel1.add(jButtonmultiplicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 220, -1, -1));
 
-        jButton4.setText("DIVICION");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, -1, -1));
+        jButtondividir.setText("DIVICION");
+        jPanel1.add(jButtondividir, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Rockwell Extra Bold", 2, 24)); // NOI18N
         jLabel7.setText("TDA FRACCION");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 270, 50));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        signoF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
+        jPanel1.add(signoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         jLabel8.setText("NUMERADOR");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, -1));
@@ -135,20 +136,21 @@ public class F_FRACCION extends javax.swing.JFrame {
 
         jLabel10.setText("RESULTADO");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        jPanel1.add(jTextFieldnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 60, -1));
+        jPanel1.add(jTextFielddeno, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 60, -1));
 
-        jTextField5.setText("jTextField5");
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
+        jTextAreaañadir.setColumns(20);
+        jTextAreaañadir.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaañadir);
 
-        jTextField6.setText("jTextField6");
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 280, 110));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 320, 110));
 
         jButton5.setText("AÑADIR");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
         jLabel11.setText("FRACCION A ");
@@ -158,8 +160,11 @@ public class F_FRACCION extends javax.swing.JFrame {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, -1, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, 420));
 
-        jSeparator2.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 10, 410));
+        jTextField1.setText("jTextField1");
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, -1, -1));
+
+        jTextField2.setText("jTextField2");
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 180, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -169,14 +174,56 @@ public class F_FRACCION extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonsumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonsumaActionPerformed
+        //boton suma 
+        // gettext() agaramos el-dato-que-pasamos
+        //FRACCION A 
+       // A=new FRACCION();
+        int numA = Integer.valueOf(jTxtnumA.getText());  
+        int denA = Integer.valueOf(jTxtdenoA.getText());
+        char signoa= signoA.getSelectedItem().toString().charAt(0) ;
+        A.setNum(numA);
+        A.setDeno(denA); 
+        A.setSigno(signoa);
+      
+        
+        //FRACCION B 
+        //B=new FRACCION();
+        int numB = Integer.valueOf(jTextnumB.getText());  
+        int denB = Integer.valueOf(jTextdenoB.getText());
+        char signob= signoB.getSelectedItem().toString().charAt(0) ;
+        B.setNum(numB);
+        B.setDeno(denB); 
+        B.setSigno(signob);
+        
+        
+        //C=new FRACCION();
+         C.suma2(A, B);
+        // fraccion C 
+        jTextArea1.setText(C.ToString());
+        
+        
+    }//GEN-LAST:event_jButtonsumaActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // BOTON AÑADIR 
+         int numD = Integer.valueOf(jTextFieldnum.getText());  
+       int denD = Integer.valueOf(jTextFielddeno.getText());
+        char signof= signoF.getSelectedItem().toString().charAt(0) ;
+        D.setNum(numD);
+        D.setDeno(denD); 
+        D.setSigno(signof);
+        
+        jTextAreaañadir.setText(D.ToString());
+        
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,14 +261,11 @@ public class F_FRACCION extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton jButtondividir;
+    private javax.swing.JButton jButtonmultiplicar;
+    private javax.swing.JButton jButtonresta;
+    private javax.swing.JButton jButtonsuma;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -238,14 +282,18 @@ public class F_FRACCION extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextAreaañadir;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextFielddeno;
+    private javax.swing.JTextField jTextFieldnum;
+    private javax.swing.JTextField jTextdenoB;
+    private javax.swing.JTextField jTextnumB;
+    private javax.swing.JTextField jTxtdenoA;
+    private javax.swing.JTextField jTxtnumA;
+    private javax.swing.JComboBox<String> signoA;
+    private javax.swing.JComboBox<String> signoB;
+    private javax.swing.JComboBox<String> signoF;
     // End of variables declaration//GEN-END:variables
 }

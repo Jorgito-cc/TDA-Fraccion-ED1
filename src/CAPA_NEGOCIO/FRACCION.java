@@ -8,8 +8,8 @@ package CAPA_NEGOCIO;
 
 public class FRACCION {
     //1.ATRIBUTOS 
-    float Nume; // aqui tambien incluye el signo  ya que va casado con nume
-    float Deno; 
+    int Nume; // aqui tambien incluye el signo  ya que va casado con nume
+    int Deno; 
     //CONSTRUCTOR -> instancia la clase 
     
     // y tiene que ser el nombre de la clase 
@@ -19,7 +19,7 @@ public class FRACCION {
         //8830
     }
     //CONSTRUCTOR CON PARAMETROS DE ENTRADA 
-    public FRACCION(float numeradorr,float denominadorr , char signoo){
+    public FRACCION(int numeradorr,int denominadorr , char signoo){
         
         this.Deno = denominadorr;
         if (signoo== '+') {
@@ -43,33 +43,32 @@ public class FRACCION {
     }
        public void setDeno(int denominador){
         if (denominador !=0) {
-            this.Deno = denominador; 
+           this.Deno = denominador; 
             //   this.Deno= Math.abs(denominador);
-        }else{
+        }//else{
     }
-             System.out.println("setDeno : error el denominado es 0");
-            System.exit(0);
-        }
+            // System.out.println("setDeno : error el denominado es 0");
+           // System.exit(0);
+        //}
     //analizar ek setsigno 
     public void setSigno(char signo){
         //como el signo va cazado con numeradoir , es ahy dondee tengo 
         //q ingresar signo
         if (signo == '+') {
-            
-            Nume= Math.abs(Nume);//usar valor absoluto ,
+            this.Nume= +Math.abs(Nume);//usar valor absoluto ,
             //
         }else{
-            Nume=-Math.abs(Nume);
+            this.Nume=-Math.abs(Nume);
         }
     }
     // 4 paso ,, getters - son funciones 
     //GET - devolver y son funciones 
     //get numerador 
-    public float getNume(){
+    public int getNume(){
         return Math.abs(Nume) ;
     }
     // Getdenominador 
-    public float getDeno(){
+    public int getDeno(){
         return this.Deno;
     }
     //getsigno 
@@ -89,10 +88,13 @@ public class FRACCION {
         return getSigno()+" " +getNume()+ "/"+getDeno() ;
     }
     */
+
     public String ToString(){
-        String C = "C=";
-        C = " "+getNume()+ "\n" +getSigno() + "  -- "+"\n" +" "+ getDeno();
-        return C;
+        String C = "_";
+        //C = " "+getNume()+ "\n" +getSigno() + "  -- "+"\n" +" "+ getDeno();
+        //return C;
+        C=  getSigno()+" " +getNume()+ "/"+getDeno() ;
+        return C ;
     }
     //
     
@@ -134,17 +136,17 @@ public class FRACCION {
        //5 ºSIMPLIFICAR ---aprender
        //(aprender a debugear 1 : 10 : 00)
        public void Simplificar(){
-           float x = MCD() ;
+           int x = MCD() ;
           this.Nume = Nume/x ;
            this.Deno = Deno/x;
        }
-       public float MCD(){
-            float u = Math.abs(Nume);
-            float v =Math.abs(Deno);
+       public int MCD(){
+            int u = Math.abs(Nume);
+            int v =Math.abs(Deno);
            if (v ==0) {
                return u ; 
            }else{
-               float r= 0 ; 
+               int r; 
                while (v!= 0 ){
                    r = u % v ;
                    u=v ;
@@ -158,7 +160,7 @@ public class FRACCION {
     //LLAMADAS
     public static void main(String[] args) {
         //INSTANCIUAR LA CLASE 
-        FRACCION A = new FRACCION(2 ,5,'+');  //trabajasin  parametrs de entrada
+        FRACCION A = new FRACCION(2 ,5,'-');  //trabajasin  parametrs de entrada
         
         System.out.println(A.ToString());
         //------------------------------------------------------------
@@ -179,5 +181,7 @@ public class FRACCION {
         
         //
     }
+
+    
     
 }
